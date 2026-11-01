@@ -2,11 +2,11 @@
 
 A tool to make designs that are actually good.
 
-design-studio is a skill for Claude that designs the way a real designer works with a client. It asks what you're making and how deep you want to go, shows you real options to pick from, writes a plan, builds with expert skills you switch on, then checks the result against your own taste.
+design-studio is a skill for Claude that designs the way a real designer works with a client. It asks what you're making and how deep you want to go, shows you real options to pick from, writes a plan, builds with expert skills you switch on, then checks the result against your own taste. It covers screens (websites, app screens, dashboards) and printables (PDFs, handouts).
 
 It doesn't try to know everything itself. It's a **navigator**: it runs the process, keeps the plan, and hands specialist work to skills made by people who ship great UI.
 
-> Status: **v0.6, early.** Tested on a handful of projects. Expect rough edges; see [Known issues](#known-issues).
+> Status: **v0.7, early.** Tested on a handful of projects. Expect rough edges; see [Known issues](#known-issues).
 
 ## Why this exists
 
@@ -90,15 +90,11 @@ design-studio/
 ├── README.md
 ├── CHANGELOG.md
 ├── LICENSE                         MIT
-├── docs/
-│   └── DECISIONS.md                why it's built this way
 ├── sources/                        expert rules, credited
 │   ├── kole-jain.md
 │   └── mobbin-dashboards.md
-├── templates/
-│   └── taste-profile.md
-└── examples/
-    └── schoology-concept/DESIGN.md
+└── templates/
+    └── taste-profile.md            your profile starts from this
 ```
 
 The skill writes two files **into your project**: `.studio/taste-profile.md` (your taste, growing over time) and `DESIGN.md` (the plan for this project).
@@ -110,7 +106,7 @@ The skill writes two files **into your project**: `.studio/taste-profile.md` (yo
 - **One file:** everything loads every time. A later version will split the tells and pack list into separate files.
 - **Taste setup and picking sheets are new** and haven't been tested much yet.
 
-See [CHANGELOG.md](CHANGELOG.md) and [docs/DECISIONS.md](docs/DECISIONS.md).
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## Credits
 
