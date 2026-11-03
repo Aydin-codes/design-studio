@@ -1,0 +1,11 @@
+name: Suggestion
+description: A skill improvement, a new tell, or a new rule
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes: { label: The suggestion }
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes: { label: What happened that made you want it, description: A real run, screenshot or example }

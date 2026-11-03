@@ -1,0 +1,11 @@
+{
+  "name": "design-studio",
+  "owner": { "name": "AydinHeugh" },
+  "plugins": [
+    {
+      "name": "design-studio",
+      "source": ".",
+      "description": "Design navigator: interviews you, shows real options to pick from, and builds only what's needed."
+    }
+  ]
+}

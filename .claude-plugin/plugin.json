@@ -1,0 +1,10 @@
+{
+  "name": "design-studio",
+  "version": "0.9.0",
+  "description": "Design navigator: interviews you, shows real options to pick from, and builds only what's needed. Includes hooks that stop Claude from skipping steps.",
+  "author": { "name": "AydinHeugh" },
+  "homepage": "https://github.com/AydinHeugh/design-studio",
+  "repository": "https://github.com/AydinHeugh/design-studio",
+  "license": "MIT",
+  "keywords": ["design", "ui", "ux", "landing page", "dashboard", "skill"]
+}

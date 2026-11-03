@@ -1,0 +1,18 @@
+name: Something went wrong
+description: The skill skipped a step, broke a rule, or a check misbehaved
+labels: [bug]
+body:
+  - type: input
+    id: tool
+    attributes: { label: Where you ran it, placeholder: "Claude Code / Claude app / Cursor / ..." }
+    validations: { required: true }
+  - type: input
+    id: path
+    attributes: { label: Job, output and depth, placeholder: "reskin, app, moderate" }
+  - type: textarea
+    id: what
+    attributes: { label: What happened, description: Which step, and what it did instead of what you expected }
+    validations: { required: true }
+  - type: textarea
+    id: state
+    attributes: { label: ".studio/state.json (if you have it)", render: json }

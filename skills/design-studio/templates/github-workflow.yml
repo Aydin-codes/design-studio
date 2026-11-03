@@ -1,0 +1,11 @@
+# Optional: copy to your project's .github/workflows/ to check DESIGN.md on every push.
+name: design-studio
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: curl -fsSL https://raw.githubusercontent.com/AydinHeugh/design-studio/main/skills/design-studio/scripts/check.mjs -o /tmp/check.mjs && node /tmp/check.mjs ci
