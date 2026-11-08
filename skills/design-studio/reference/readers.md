@@ -11,6 +11,13 @@ Readers are the people who will use or read the design, not the person running t
 
 Write the answers into `DESIGN.md` under Readers, in the user's words. Design to them. If the user doesn't know, say so in the spec and design for the stated purpose; don't invent a persona.
 
+## If the readers are learning something
+
+Offer these, with their evidence, and let the user approve each one. Don't apply them on your own.
+- **Leave out interesting but irrelevant detail.** Decorative photos, side stories and realistic detail that isn't the lesson lower learning (the seductive-details effect; Rey 2012 and Sundararajan & Adesope 2020, meta-analyses).
+- **No countdown pressure on problem solving.** Time pressure pushes people to worse strategies, especially anxious learners (Caviola et al. 2017, review).
+- **Feedback says why.** Feedback that explains why an answer is wrong helps far more than right/wrong alone (Van der Kleij, Feskens & Eggen 2015, meta-analysis; Shute 2008).
+
 ## Defaults (use only where the user hasn't said otherwise; they can override any)
 - Fewer choices at once.
 - Related things grouped; the same things in the same place every time.

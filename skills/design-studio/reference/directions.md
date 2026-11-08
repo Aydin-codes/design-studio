@@ -13,7 +13,7 @@ Say which axis you chose and why. Three versions that differ only in color teach
 - If the user brought their own idea, direction 1 is built from it, faithfully. The other two branch off it.
 - All three follow the rules in SKILL.md and the output file. They differ in *how* they show the product, not in whether they do.
 - Text-left, image-right may appear at most once, and only on purpose.
-- Each direction gets one line on the idea behind it and one on its cost.
+- Each direction gets one line on the idea behind it, one on its cost, and one naming its hero asset and source (`reference/assets.md`).
 - Moving outputs (landing, portfolio, game): show directions in a live page that plays, with a replay control. Static UI: a canvas is fine.
 - Show one direction at a time, full size, with instant switching (emil `prototype` pattern).
 

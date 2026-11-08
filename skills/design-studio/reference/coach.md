@@ -12,4 +12,6 @@ Use when the user is vague, and throughout Deep. Translate vague words, then con
 | feels off | alignment, inconsistent spacing, or competing focal points |
 | more fun | more motion responding to actions, warmer color, looser shapes, playful copy |
 
+**Give the user the words.** Most users know what they like but not what it's called. When they describe something in plain words, say the design term back once ("that's called a bento grid"; "you mean more contrast of scale") so they can ask for it directly next time. Same for sources: name the library or asset site something comes from.
+
 Name the principle behind a choice in one line (contrast of scale, grouping, hierarchy). Use emil `animation-vocabulary` for motion terms. In Deep, sometimes ask the user what's wrong with a screen before fixing it.

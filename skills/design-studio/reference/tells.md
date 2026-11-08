@@ -2,6 +2,12 @@
 
 Each user's own tells come from their taste profile and take priority. A tell is a look **used by default, with no reason from the subject.** The same look chosen for a reason (a serif because the subject is a printed menu) is fine.
 
+- Claude's decoration grammar: a short colored bar under headings, uppercase mono labels, colored uppercase table headers, one line of colored text as a callout, a row of color swatches, white rounded cards on a gray page
+- Labels on the design naming its own fonts, palette or process
+- The kit: a small uppercase label (often in a pill), a serif headline, gray body text, a fat pill button, a gray stats line with dots ("4 min · 6 clicks · 4 mistakes"), numbered steps in the accent color
+- Several mid-brightness pastels with no leading color; gray cards on a gray panel on a gray page
+- Leftover placeholder labels ("group colour 2") or notes explaining the design on the page
+- Hand-coded drawings or CSS shapes where a real photo, render or model belongs
 - Hero formula: small label, headline with one colored or italic word, gray subtext, a solid and an outline button side by side, a picture on the right
 - Fake structure: "02 / Mission" numbering or labels that mean nothing
 - Decorative mixing of a thin sans with an italic serif

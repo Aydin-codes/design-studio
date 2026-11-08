@@ -1,6 +1,6 @@
 {
   "name": "design-studio",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Design navigator: interviews you, shows real options to pick from, and builds only what's needed. Includes hooks that stop Claude from skipping steps.",
   "author": { "name": "AydinHeugh" },
   "homepage": "https://github.com/AydinHeugh/design-studio",

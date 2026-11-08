@@ -1,7 +1,9 @@
 {
   "name": "design-studio",
   "description": "design-studio: a Claude skill that designs like a real designer.",
-  "owner": { "name": "AydinHeugh" },
+  "owner": {
+    "name": "AydinHeugh"
+  },
   "plugins": [
     {
       "name": "design-studio",

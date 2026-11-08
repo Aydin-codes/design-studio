@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.10
+- The plugin now includes two companion skills: `toolkit` (stacks, libraries and asset sources with licences) and `color-and-type-spark` (live picking sheets for colors and fonts). design-studio points to them instead of keeping its own copies.
+- Teaches the words: when you describe something in plain language, it tells you the design term and the source.
+- Copy rule: every line must pass "could this sentence describe any other product?"
+- Starts from human-made references, always: your own first, otherwise two or three real ones it finds and shows. Building is blocked until one is recorded.
+- Picking sheets show options in the real page, vary more than hue, and never label the design.
+- New tells for Claude's decoration habits: short colored bar under headings, uppercase mono labels, colored table headers, swatch rows.
+- A tell scan (`check.mjs tells`) searches the built files for known AI tells. Placeholders, invented social proof and design notes on the page block finishing.
+- Real assets first: every direction names its hero asset and source (your photos, a real 3D model, real photo or video, then generated). No hand-coded drawings as the hero unless you pick that.
+- Builds from component libraries (shadcn/ui, Magic UI, React Bits) instead of hand-written CSS.
+- A fresh-eyes `design-critic` agent reviews screenshots without seeing the builder's chat; you pick which fixes to apply.
+- References are shown as real screenshots; new reference set for tech-forward hardware sites.
+- More tells: the uppercase-label + serif + pill-button kit, pastel color soup, leftover placeholders, design notes on the page.
+- For learning products, it offers three research-backed rules (no distracting detail, no countdown pressure, feedback that explains why). You approve each one.
+
 ## v0.9
 - Split into a short core plus branch files that open by job, output and step, so Claude reads only what it needs and re-reads it at each step.
 - Confirms what the job keeps and changes before doing anything; you can move items between the lists.

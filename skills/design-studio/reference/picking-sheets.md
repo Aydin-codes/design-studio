@@ -1,6 +1,12 @@
 # Picking sheets
 
-People can't choose what they can't see. For any taste choice that isn't settled (fonts, colors, effects, libraries), show a visual sheet in an artifact or page, not a list of names:
+People can't choose what they can't see. Picking sheets follow four rules:
+- **Start from the chosen reference.** Options are variations on what the user took from it, not on your defaults.
+- **Show options in the real thing:** the actual page or screen with real content, not a card or a specimen.
+- **Vary more than one thing.** Options that differ only in hue teach nothing. Vary weight, size contrast, density and how much color is used.
+- **No labels on the design.** Font and palette names go in a small key outside the preview, never on it.
+
+For colors and fonts, follow the `color-and-type-spark` skill: it builds the sheet from real color scales and non-default fonts. The rules below cover everything else. For any taste choice that isn't settled (fonts, colors, effects, libraries), show a visual sheet in an artifact or page, not a list of names:
 - **Type:** 4-6 pairings, each with this project's real headline and body text, at real sizes.
 - **Color:** 4-6 palettes, each applied to the same piece of this project's real screen.
 - **Effects:** 4-6 live demos of techniques that fit the product, each labeled with its library and a one-line "ask for it like this."

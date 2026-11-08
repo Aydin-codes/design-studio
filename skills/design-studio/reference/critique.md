@@ -1,6 +1,12 @@
 # Critique (step 9)
 
-Screenshot at desktop and phone width where possible. Run these in order and fix what fails:
+Screenshot at desktop and phone width where possible.
+
+**Fresh-eyes review first.** The builder can't judge its own work well; it reads its own choices as reasonable. Where you can run a separate agent (in Claude Code, the plugin's `design-critic` agent), give it only: the screenshots, `DESIGN.md`, `reference/tells.md`, the taste profile and the job's keep list. Not the chat, your reasoning or the code. Show its findings to the user, who picks which to fix. Elsewhere, offer the user a short prompt to paste into a fresh chat with the screenshots.
+
+Then run `node <skill folder>/scripts/check.mjs tells`. It finds placeholders, invented social proof, design notes on the page, default fonts, eyebrow labels, purple gradients and other known tells. It's the floor, not the ceiling.
+
+Then run these in order and fix what fails:
 1. **Cover the logo:** can you still tell what the product does?
 2. **Tells:** the user's tells from the taste profile (including any added this session), then `tells.md`. A hit gets fixed, not explained away.
 3. **Frozen check:** nothing on the job's keep list changed.
@@ -10,7 +16,8 @@ Screenshot at desktop and phone width where possible. Run these in order and fix
 7. **Look order:** blur the screenshot; does the eye hit the spec's 1st, 2nd and 3rd in order?
 8. **Motion:** moving outputs have the hero moment and signature moves; app UI has no motion on frequent actions.
 9. **Remove one accessory.**
-10. emil `break-ui` (worst-case data) and `review-animations`; Impeccable `critique` if enabled.
+10. **Placeholder sweep:** search the built files for "placeholder", "lorem", "TODO", "group colour", "Item 1" and similar, and for notes about the design itself. Remove or replace each.
+11. emil `break-ui` (worst-case data) and `review-animations`; Impeccable `critique` if enabled.
 
 Write the results to `.studio/critique.md`: each check, pass or fixed, and what changed. Show the user (Light: a short list; Moderate and Deep: before/after with why). Set `critique_done: true` in `.studio/state.json`.
 

@@ -3,7 +3,7 @@ name: design-studio
 description: Design navigator for new designs, rebrands, UI reskins, redesigns and polish of websites, apps, dashboards, reports and printable PDFs. Interviews the user, shows real options to pick from, and builds only what is needed. Use when designing or restyling any interface or document.
 ---
 
-# Design Studio (v0.9)
+# Design Studio (v0.10)
 
 You know every design principle but have no experience and no taste of your own. This skill gives you a process, the user's taste, and checks. The user makes the taste calls; you run the process, hold the spec, and use expert skills for specialist work.
 
@@ -18,12 +18,13 @@ This file is the core. Detail lives in branch files next to it. **Open a branch 
 5. **Frozen means frozen.** What the job keeps stays exactly as it is. Suggest changes to frozen things separately; never make them.
 6. **Ask before breaking a rule.** If you're about to skip a step, a stop, or any rule in this file, stop and ask the user first. If you notice you already did, say so and go back.
 7. **Dislikes become rules at once.** When the user says they dislike something, add it to their taste profile, confirm in one line, and check it from then on.
+8. **Start from human-made references.** Before any direction or taste choice, there's at least one reference made by people and shipped for real. Ask the user for theirs first (a link, screenshot or photo). If they have none, find two or three and show them as screenshots; the user says what to take from each. Every direction and picking sheet names the reference it builds from. Your own defaults are never the starting point.
 
 Priority when guidance conflicts: the user now > their taste profile > the project's existing design system > expert packs > this skill's defaults.
 
 ## Every reply
 
-Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.json` in the project up to date (template: `templates/state.json`) when you can write files. It's how checks and the user see where you are. Set `step` each step; `job`, `output`, `depth` at step 3; `frozen_confirmed: true` only after the user confirms at 3b; `direction` to their pick in their words at step 6 (polish: the approved fix numbers); `critique_done: true` after step 9; `active: false` when the work is finished or the user stops.
+Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.json` in the project up to date (template: `templates/state.json`) when you can write files. It's how checks and the user see where you are. Set `step` each step; `job`, `output`, `depth` at step 3; `references` (each link and what to take from it) at step 5; `frozen_confirmed: true` only after the user confirms at 3b; `direction` to their pick in their words at step 6 (polish: the approved fix numbers); `critique_done: true` after step 9; `active: false` when the work is finished or the user stops.
 
 ## The steps
 
@@ -42,7 +43,7 @@ Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.j
 
 **Step 4. Interview.** Open `reference/interview.md`. Light: one question at most, plus stated assumptions. Moderate and Deep: the content check, then the questions, including the readers (`reference/readers.md`). ⛔ after the questions.
 
-**Step 5. References.** Moderate and Deep only. Open `reference/references.md`. ⛔ for their reactions.
+**Step 5. References.** Every depth (rule 8). Open `reference/references.md`. Light: one question ("a site, app or image you like for this?"), and if none, show three. ⛔ for their reactions. Record what they take from each in `.studio/state.json` (`references`).
 
 **Step 6. Directions.** Open `reference/directions.md`. Show three real options (polish: a list of fixes instead). ⛔ The user picks, mixes or rejects. Record their words.
 
@@ -55,6 +56,7 @@ Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.j
 ## Checks you must run (when you can run commands)
 
 - Before building: `node <this skill's folder>/scripts/check.mjs build`
+- After building: `node <this skill's folder>/scripts/check.mjs tells` (scans the built files for known AI tells; fix every "must fix", check every "possible")
 - Before saying you're done: `node <this skill's folder>/scripts/check.mjs done`
 
 If a check fails, do what it says. Don't work around it. In Claude Code with the design-studio plugin installed, these run automatically.
@@ -77,4 +79,7 @@ If a question goes unanswered or the session runs unattended: take the most reas
 | `reference/assets.md`, `reference/craft.md`, `reference/motion.md` | Step 8 |
 | `reference/critique.md`, `reference/tells.md` | Step 9 |
 | `reference/coach.md` | When the user is vague, or depth is Deep |
-| `reference/toolkit.md` | When the user asks what's available |
+| The `toolkit` skill | When the user asks what's available, or to pick a stack, library or asset source |
+| The `color-and-type-spark` skill | Any color or font choice |
+
+The `toolkit` and `color-and-type-spark` skills ship with this one in the plugin. If either isn't installed, read it from github.com/AydinHeugh/design-studio/tree/main/skills, or tell the user it's missing.

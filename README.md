@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.9-111111?style=flat-square" alt="Version 0.9">
+  <img src="https://img.shields.io/badge/version-0.10-111111?style=flat-square" alt="Version 0.10">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
   <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
 </p>
@@ -15,7 +15,7 @@
 <p align="center">
   <a href="#install">Install</a> ·
   <a href="#how-it-works">How it works</a> ·
-  <a href="skills/design-studio/reference/toolkit.md">Toolkit</a> ·
+  <a href="skills/toolkit/SKILL.md">Toolkit</a> ·
   <a href="CHANGELOG.md">Changelog</a> ·
   <a href="CONTRIBUTING.md">Contributing</a>
 </p>
@@ -26,8 +26,10 @@
 
 design-studio makes Claude (and other AI coding tools) work the way a designer works with a client. It asks what you're making, confirms what must stay the same, shows you real options to pick from, writes a plan, builds only what's needed, then checks the result against your own taste. It covers websites, app screens, dashboards, reports, printable PDFs and game interfaces.
 
+You don't need design vocabulary. You react to real options and say what you like in plain words; it tells you what that's called and where it comes from, so you can ask for it directly next time. You still review and decide.
+
 > [!NOTE]
-> v0.9 is early and tested on a handful of projects. Feedback and issues are welcome.
+> v0.10 is early and tested on a handful of projects. Feedback and issues are welcome.
 
 ## Install
 
@@ -98,6 +100,7 @@ Big skills get skimmed. v0.9 fixes that three ways:
 3. **A check script** (`scripts/check.mjs`, Node, no dependencies):
    - Won't let it edit UI files before you've confirmed the job, picked a direction and the plan exists.
    - Won't let it finish before the critique is done.
+   - Scans the built files for known AI tells (placeholders, invented reviews, default fonts, eyebrow labels, design notes on the page).
    - Does nothing in projects where design-studio isn't active.
 
 | Where | How the checks run |
@@ -121,18 +124,21 @@ Expert skills you switch on per project; only what you enable gets loaded. See [
 | `motion` | GSAP, Motion, Three.js, Rive, Lottie | Motion identity for landing pages and games |
 | `native-apple` | Apple HIG skills | Native iOS and macOS apps |
 
-**Assets** you can pull from (icons, fonts, photos, 3D, connectors), with licences: [toolkit.md](skills/design-studio/reference/toolkit.md).
+**Assets** you can pull from (icons, fonts, photos, 3D, connectors), with licences: [toolkit](skills/toolkit/SKILL.md).
 
 ## Files
 
 ```
 .claude-plugin/          plugin and marketplace manifests
 hooks/hooks.json         Claude Code hooks that run the checks
+agents/design-critic.md  fresh-eyes reviewer that sees only screenshots and the plan
+skills/toolkit/          stacks, libraries and asset sources, with licences
+skills/color-and-type-spark/  live picking sheets for colors and fonts
 skills/design-studio/
 ├── SKILL.md             the core: rules and the nine steps
 ├── jobs/                new, rebrand, reskin, redesign, polish
 ├── outputs/             landing, app, dashboard, report, print, game
-├── reference/           one file per step, plus craft, motion, tells, toolkit
+├── reference/           one file per step, plus craft, motion and tells
 ├── scripts/check.mjs    the checks
 ├── sources/             expert rules, credited
 └── templates/           state, taste profile, GitHub workflow
