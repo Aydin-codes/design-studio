@@ -1,6 +1,7 @@
 # Taste profile
 coach_mode: on
 usual_depth: moderate
+usual_focus: both
 suggest_content: no
 
 ## Taste setup results

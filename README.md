@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.11-111111?style=flat-square" alt="Version 0.11">
+  <img src="https://img.shields.io/badge/version-0.12-111111?style=flat-square" alt="Version 0.12">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
   <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
 </p>
@@ -29,7 +29,7 @@ design-studio makes Claude (and other AI coding tools) work the way a designer w
 You don't need design vocabulary. You react to real options and say what you like in plain words; it tells you what that's called and where it comes from, so you can ask for it directly next time. You still review and decide.
 
 > [!NOTE]
-> v0.11 is early and tested on a handful of projects. Feedback and issues are welcome.
+> v0.12 is early and tested on a handful of projects. Feedback and issues are welcome.
 
 ## Install
 
@@ -73,6 +73,8 @@ Pick the job. The skill shows what it will keep and change, and you confirm befo
 | Reskin | how everything works (UX) | how it looks (UI) |
 | Redesign | content and goals | layout and look |
 | Polish | everything you have | the details |
+
+Then what matters most: **how it looks, how it works, or both.** Pick "works" and it skips the taste questions, uses clean defaults, and spends your time on tasks, steps and clarity instead.
 
 Then the output: landing page, app, dashboard, report, print/PDF or game. Each has its own rules (a report leads with what its readers need; a print handout works in black and white; an app's motion stays quiet).
 

@@ -3,6 +3,7 @@
   "step": 1,
   "job": "",
   "output": "",
+  "focus": "",
   "depth": "",
   "frozen_confirmed": false,
   "references": [],

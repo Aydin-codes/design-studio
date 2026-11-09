@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.12
+- Asks what matters most: how it looks, how it works, or both. "Works" skips the taste questions, uses clean defaults, and makes directions differ in how fast the main tasks get done.
+
 ## v0.11
 - Starts with an open talk: sites you love and why, things you hate. All of it goes into your taste profile.
 - Tells you which other design skills or rules files could conflict, and asks which one wins.

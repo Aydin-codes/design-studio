@@ -3,7 +3,7 @@ name: design-studio
 description: Design navigator for new designs, rebrands, UI reskins, redesigns and polish of websites, apps, dashboards, reports and printable PDFs. Interviews the user, shows real options to pick from, and builds only what is needed. Use when designing or restyling any interface or document.
 ---
 
-# Design Studio (v0.11)
+# Design Studio (v0.12)
 
 You know every design principle but have no experience and no taste of your own. This skill gives you a process, the user's taste, and checks. The user makes the taste calls; you run the process, hold the spec, and use expert skills for specialist work.
 
@@ -24,7 +24,7 @@ Priority when guidance conflicts: the user now > their taste profile > the proje
 
 ## Every reply
 
-Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.json` in the project up to date (template: `templates/state.json`) when you can write files. It's how checks and the user see where you are. Set `step` each step; `job`, `output`, `depth` at step 3; `references` (each link and what to take from it) at step 5; `frozen_confirmed: true` only after the user confirms at 3b; `direction` to their pick in their words at step 6 (polish: the approved fix numbers); `critique_done: true` after step 9; `active: false` when the work is finished or the user stops.
+Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.json` in the project up to date (template: `templates/state.json`) when you can write files. It's how checks and the user see where you are. Set `step` each step; `job`, `output`, `focus`, `depth` at step 3; `references` (each link and what to take from it) at step 5; `frozen_confirmed: true` only after the user confirms at 3b; `direction` to their pick in their words at step 6 (polish: the approved fix numbers); `critique_done: true` after step 9; `active: false` when the work is finished or the user stops.
 
 ## The steps
 
@@ -34,9 +34,10 @@ Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.j
 
 **Step 2. Setup.** Open `reference/setup.md`. Start with the open talk (one line: anything to know, sites you love, things you hate). Tell the user which other design skills or rules files you found that could conflict, and ask which wins. Ask both in the same reply as step 3's questions, so it's one stop. Find the taste profile: `.studio/taste-profile.md` in the project, else `~/.studio/taste-profile.md`, else `profile.md` in this skill's folder, else none. If none, run the setup gate (the user can skip it). Run the pack check in `reference/packs.md` and show it. Mention once, in one line, what they can connect and pull from (`reference/assets.md`).
 
-**Step 3. Job, output, depth.** ⛔ Ask three things together, as clickable choices:
+**Step 3. Job, output, focus, depth.** ⛔ Ask four things together, as clickable choices:
 - **Job:** new · rebrand · reskin · redesign · polish
 - **Output:** landing page · app · dashboard · report · print/PDF · game
+- **Focus:** how it looks · how it works · both. Open `reference/focus.md`; "works" changes steps 4 to 9.
 - **Depth:** Light (~2 min of their time) · Moderate (~10 min, default) · Deep (30+ min). Skip asking only if they said it explicitly or the taste profile has `usual_depth` (then state it). A short prompt is not a reason to skip.
 
 **Step 3b. Confirm what's frozen.** ⛔ Open `jobs/<job>.md`. Show its keep/change list for this project in plain words and ask the user to confirm or move items between the lists. Whatever they confirm is final. Then open `outputs/<output>.md`; its rules apply from now on.
@@ -72,6 +73,7 @@ If a question goes unanswered or the session runs unattended: take the most reas
 | `jobs/<job>.md` | Step 3b |
 | `outputs/<output>.md` | Step 3b, then whenever designing |
 | `reference/setup.md`, `reference/packs.md` | Step 2 |
+| `reference/focus.md` | Step 3, and whenever focus is "works" |
 | `reference/interview.md`, `reference/readers.md` | Step 4 |
 | `reference/references.md`, `reference/picking-sheets.md` | Step 5, and any taste choice |
 | `reference/directions.md` | Step 6 |

@@ -15,6 +15,8 @@ You were given:
 
 Do not ask for or read the builder's conversation, notes or code. Judge the result.
 
+If `DESIGN.md` says the focus is "works", judge only whether the main tasks are fast, clear and recoverable, plus anything invented or left as placeholder. Skip look and taste.
+
 Check, in this order:
 1. Cover the logo: can you tell what the product does?
 2. Look order: does the eye hit what `DESIGN.md` says is 1st, 2nd, 3rd?
