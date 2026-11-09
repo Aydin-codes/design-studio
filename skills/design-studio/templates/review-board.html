@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review board</title>
+<!--
+  design-studio review board. Works offline in any browser, with any AI tool.
+  Fill in the JSON below (one entry per direction), save next to the direction files, open it.
+  "src" is an .html file (shown live) or an image (.png/.jpg/.webp).
+  The user's notes autosave in this browser and come back to the AI by
+  "Copy feedback" (paste into the chat) or "Download feedback.md" (save in .studio/).
+-->
+<script id="board" type="application/json">
+{
+  "project": "Project name",
+  "step": "Directions",
+  "options": [
+    { "name": "A", "src": "direction-a.html", "idea": "One line on the idea", "cost": "One line on what it costs", "asset": "Hero asset and source", "reference": "Which reference it builds on" },
+    { "name": "B", "src": "direction-b.html", "idea": "", "cost": "", "asset": "", "reference": "" },
+    { "name": "C", "src": "direction-c.html", "idea": "", "cost": "", "asset": "", "reference": "" }
+  ]
+}
+</script>
+<style>
+  :root { --bg:#f6f6f4; --panel:#fff; --ink:#111; --muted:#666; --line:#ddd; --sel:#111; --selink:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111; --panel:#1a1a1a; --ink:#eee; --muted:#999; --line:#333; --sel:#eee; --selink:#111; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+  header { display:flex; gap:8px; align-items:center; padding:10px 16px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  header h1 { font-size:15px; margin:0 12px 0 0; font-weight:600; }
+  .tab { border:1px solid var(--line); background:var(--panel); color:var(--ink); padding:6px 14px; border-radius:6px; cursor:pointer; font:inherit; }
+  .tab[aria-selected="true"] { background:var(--sel); color:var(--selink); border-color:var(--sel); }
+  .hint { color:var(--muted); font-size:13px; margin-left:auto; }
+  main { display:grid; grid-template-columns:1fr 340px; height:calc(100vh - 53px); }
+  .stage { overflow:auto; background:var(--bg); }
+  .stage iframe { width:100%; height:100%; border:0; background:#fff; }
+  .stage img { display:block; max-width:100%; margin:0 auto; }
+  aside { border-left:1px solid var(--line); background:var(--panel); padding:16px; overflow:auto; display:flex; flex-direction:column; gap:12px; }
+  aside h2 { font-size:16px; margin:0; }
+  .meta { font-size:13px; color:var(--muted); margin:0; }
+  .meta b { color:var(--ink); font-weight:600; }
+  .verdict { display:flex; gap:6px; }
+  .verdict button { flex:1; }
+  textarea { width:100%; min-height:120px; font:inherit; padding:8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--ink); resize:vertical; }
+  label { font-size:13px; font-weight:600; }
+  .actions { display:flex; gap:6px; flex-wrap:wrap; margin-top:auto; }
+  .primary { background:var(--sel); color:var(--selink); border-color:var(--sel); }
+  #status { font-size:13px; color:var(--muted); min-height:1.2em; }
+  @media (max-width:800px) { main { grid-template-columns:1fr; height:auto; } .stage { height:70vh; } aside { border-left:0; border-top:1px solid var(--line); } }
+</style>
+</head>
+<body>
+<header><h1 id="title"></h1><nav id="tabs" role="tablist"></nav><span class="hint">Keys 1–9 switch</span></header>
+<main>
+  <div class="stage" id="stage"></div>
+  <aside>
+    <h2 id="optName"></h2>
+    <p class="meta" id="optMeta"></p>
+    <div class="verdict" role="group" aria-label="Verdict">
+      <button class="tab" data-v="pick">Pick</button>
+      <button class="tab" data-v="mix">Take parts</button>
+      <button class="tab" data-v="reject">Reject</button>
+    </div>
+    <label for="note">Notes on this one: what you like, what you hate, and why</label>
+    <textarea id="note" placeholder="e.g. love the big type, hate the gray cards, headline too long"></textarea>
+    <label for="general">Anything else (sites you like, things to never do)</label>
+    <textarea id="general"></textarea>
+    <div class="actions">
+      <button class="tab primary" id="copy">Copy feedback</button>
+      <button class="tab" id="download">Download feedback.md</button>
+    </div>
+    <div id="status" aria-live="polite"></div>
+  </aside>
+</main>
+<script>
+const board = JSON.parse(document.getElementById("board").textContent);
+const KEY = "ds-review:" + board.project + ":" + board.step;
+let notes = {}; try { notes = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(notes)); } catch {} };
+let cur = 0;
+const $ = id => document.getElementById(id);
+$("title").textContent = board.project + " · " + board.step;
+board.options.forEach((o, i) => {
+  const b = document.createElement("button"); b.className = "tab"; b.role = "tab"; b.textContent = o.name;
+  b.onclick = () => show(i); $("tabs").appendChild(b);
+});
+function show(i) {
+  cur = i; const o = board.options[i]; const n = notes[o.name] || {};
+  [...$("tabs").children].forEach((b, j) => b.setAttribute("aria-selected", j === i));
+  const isImg = /\.(png|jpe?g|webp|gif|avif)$/i.test(o.src);
+  $("stage").innerHTML = isImg ? `<img alt="${o.name}">` : `<iframe title="${o.name}"></iframe>`;
+  $("stage").firstChild.src = o.src;
+  $("optName").textContent = "Direction " + o.name;
+  $("optMeta").innerHTML = ["idea", "cost", "asset", "reference"].filter(k => o[k]).map(k => `<b>${k[0].toUpperCase() + k.slice(1)}:</b> ${o[k]}`).join("<br>");
+  $("note").value = n.note || "";
+  document.querySelectorAll("[data-v]").forEach(b => b.setAttribute("aria-selected", b.dataset.v === n.verdict));
+}
+$("note").oninput = e => { const k = board.options[cur].name; notes[k] = { ...(notes[k] || {}), note: e.target.value }; save(); };
+$("general").value = notes._general || "";
+$("general").oninput = e => { notes._general = e.target.value; save(); };
+document.querySelectorAll("[data-v]").forEach(b => b.onclick = () => {
+  const k = board.options[cur].name; const n = notes[k] || {};
+  n.verdict = n.verdict === b.dataset.v ? "" : b.dataset.v; notes[k] = n; save(); show(cur);
+});
+document.addEventListener("keydown", e => { if (e.target.tagName === "TEXTAREA") return; const n = +e.key; if (n >= 1 && n <= board.options.length) show(n - 1); });
+function feedback() {
+  const words = { pick: "PICK", mix: "take parts", reject: "reject" };
+  let md = `# Feedback: ${board.project}, ${board.step}\n\n`;
+  board.options.forEach(o => { const n = notes[o.name] || {}; md += `## ${o.name}${n.verdict ? " (" + words[n.verdict] + ")" : ""}\n${(n.note || "").trim() || "no notes"}\n\n`; });
+  if ((notes._general || "").trim()) md += `## Anything else\n${notes._general.trim()}\n`;
+  return md;
+}
+$("copy").onclick = async () => {
+  try { await navigator.clipboard.writeText(feedback()); $("status").textContent = "Copied. Paste it into the chat."; }
+  catch { const t = document.createElement("textarea"); t.value = feedback(); document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); $("status").textContent = "Copied. Paste it into the chat."; }
+};
+$("download").onclick = () => {
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([feedback()], { type: "text/markdown" }));
+  a.download = "feedback.md"; a.click(); $("status").textContent = "Saved. Put feedback.md in the project's .studio/ folder, or attach it.";
+};
+show(0);
+</script>
+</body>
+</html>

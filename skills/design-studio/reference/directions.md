@@ -17,8 +17,11 @@ Say which axis you chose and why. Three versions that differ only in color teach
 - Moving outputs (landing, portfolio, game): show directions in a live page that plays, with a replay control. Static UI: a canvas is fine.
 - Show one direction at a time, full size, with instant switching (emil `prototype` pattern).
 
-## Review board (Moderate and Deep)
-One page per project with the directions, a way for the user to leave notes on the design that you read back, a before/after view for fixes, and a short decision log (picked, rejected, why). If that isn't possible, show the directions and collect notes in chat.
+## Review board (every depth)
+Copy `templates/review-board.html` next to the direction files, fill in its JSON (name, file, idea, cost, hero asset, reference) and open it, or tell the user to. It works offline in any browser, whatever AI tool built it. The user switches between directions, marks each Pick, Take parts or Reject, and writes notes. Their notes come back to you by "Copy feedback" (pasted into the chat) or "Download feedback.md" (saved in `.studio/`); read whichever arrives. Every like and dislike in it goes into the taste profile with its reason.
+- In the Claude app, a published artifact can use its own comments instead; still accept pasted feedback.
+- Reuse the board for picking sheets and for before/after views of fixes.
+- If no browser is available, show the directions and collect notes in chat.
 
 ## After the pick
 Record the user's words verbatim in `.studio/state.json` (`direction`) and the taste profile. "None of these": ask what each got wrong, then make three new ones that move away from all of them.

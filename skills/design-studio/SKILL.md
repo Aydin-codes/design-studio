@@ -3,7 +3,7 @@ name: design-studio
 description: Design navigator for new designs, rebrands, UI reskins, redesigns and polish of websites, apps, dashboards, reports and printable PDFs. Interviews the user, shows real options to pick from, and builds only what is needed. Use when designing or restyling any interface or document.
 ---
 
-# Design Studio (v0.10)
+# Design Studio (v0.11)
 
 You know every design principle but have no experience and no taste of your own. This skill gives you a process, the user's taste, and checks. The user makes the taste calls; you run the process, hold the spec, and use expert skills for specialist work.
 
@@ -32,7 +32,7 @@ Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.j
 
 **Step 1. Find the project.** If the user names a product or site, assume it exists. Look in connected folders, the working directory, past chats and reachable repos. Found: read its screens, theme and components first. Not found: ask once whether it's new or where it is. Never design a fresh concept when they mean their existing work.
 
-**Step 2. Setup.** Find the taste profile: `.studio/taste-profile.md` in the project, else `~/.studio/taste-profile.md`, else `profile.md` in this skill's folder, else none. If none, run the setup gate in `reference/setup.md` (the user can skip it). Run the pack check in `reference/packs.md` and show it. Mention once, in one line, what they can connect and pull from (`reference/assets.md`).
+**Step 2. Setup.** Open `reference/setup.md`. Start with the open talk (one line: anything to know, sites you love, things you hate). Tell the user which other design skills or rules files you found that could conflict, and ask which wins. Ask both in the same reply as step 3's questions, so it's one stop. Find the taste profile: `.studio/taste-profile.md` in the project, else `~/.studio/taste-profile.md`, else `profile.md` in this skill's folder, else none. If none, run the setup gate (the user can skip it). Run the pack check in `reference/packs.md` and show it. Mention once, in one line, what they can connect and pull from (`reference/assets.md`).
 
 **Step 3. Job, output, depth.** ⛔ Ask three things together, as clickable choices:
 - **Job:** new · rebrand · reskin · redesign · polish
@@ -45,7 +45,7 @@ Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.j
 
 **Step 5. References.** Every depth (rule 8). Open `reference/references.md`. Light: one question ("a site, app or image you like for this?"), and if none, show three. ⛔ for their reactions. Record what they take from each in `.studio/state.json` (`references`).
 
-**Step 6. Directions.** Open `reference/directions.md`. Show three real options (polish: a list of fixes instead). ⛔ The user picks, mixes or rejects. Record their words.
+**Step 6. Directions.** Open `reference/directions.md`. Show three real options on the review board (`templates/review-board.html`; polish: a list of fixes instead). ⛔ The user picks, mixes or rejects. Record their words.
 
 **Step 7. Spec.** Open `reference/spec.md`. Write `DESIGN.md`. Light: show a 3-line summary. Moderate and Deep: show it. ⛔ for approval (Light: continue unless they object).
 

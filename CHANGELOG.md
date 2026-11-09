@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.11
+- Starts with an open talk: sites you love and why, things you hate. All of it goes into your taste profile.
+- Tells you which other design skills or rules files could conflict, and asks which one wins.
+- Review board: switch between directions, mark Pick, Take parts or Reject, write notes, then copy or download your feedback. Works offline with any AI tool.
+
 ## v0.10
 - The plugin now includes two companion skills: `toolkit` (stacks, libraries and asset sources with licences) and `color-and-type-spark` (live picking sheets for colors and fonts). design-studio points to them instead of keeping its own copies.
 - Teaches the words: when you describe something in plain language, it tells you the design term and the source.

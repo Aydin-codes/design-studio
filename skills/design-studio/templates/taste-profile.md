@@ -11,6 +11,9 @@ suggest_content: no
 
 ## Personal tells
 
+## Skill order
+(which skill or rules win when they conflict)
+
 ## Default packs
 
 ## Project log

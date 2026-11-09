@@ -1,3 +1,16 @@
+# Open talk (every run, before anything else)
+
+Before asking about the job, give the user one open moment: "Before we start: anything I should know? Sites or apps you love and why, things you hate, how you want me to work with you." Keep it to that one line; don't fill it with your own suggestions.
+- Every like and dislike goes into the taste profile with the user's reason, in their words. Dislikes become rules at once (rule 7).
+- Sites they name become references (rule 8): note what they like about each.
+- If they say "nothing, go", go.
+
+# Other skills that may conflict
+
+Other design skills can be loaded at the same time (frontend-design, impeccable, anti-slop skills, the user's own, an agent or rules file such as AGENTS.md, CLAUDE.md or .cursor/rules). Their rules can disagree with this one or with the user's taste.
+
+At setup, look at what's loaded or installed (the skills you can see, `.claude/skills/`, `~/.claude/skills/`, rules files in the project) and tell the user in one line which other design skills or rules you found. If any could conflict, ask which wins. Default order: the user now > their taste profile > the project's own rules files > this skill > other skills. Record their answer in the taste profile under `## Skill order`. When a conflict comes up mid-run, say which rule you followed and why in one line.
+
 # Setup gate (first run)
 
 Run this when there's no taste profile. It takes about 5 minutes. The user can skip it; then say "running on defaults" and continue.

@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.10-111111?style=flat-square" alt="Version 0.10">
+  <img src="https://img.shields.io/badge/version-0.11-111111?style=flat-square" alt="Version 0.11">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
   <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
 </p>
@@ -29,7 +29,7 @@ design-studio makes Claude (and other AI coding tools) work the way a designer w
 You don't need design vocabulary. You react to real options and say what you like in plain words; it tells you what that's called and where it comes from, so you can ask for it directly next time. You still review and decide.
 
 > [!NOTE]
-> v0.10 is early and tested on a handful of projects. Feedback and issues are welcome.
+> v0.11 is early and tested on a handful of projects. Feedback and issues are welcome.
 
 ## Install
 
@@ -110,6 +110,12 @@ Big skills get skimmed. v0.9 fixes that three ways:
 | GitHub | Optional workflow that checks `DESIGN.md` on every push ([template](skills/design-studio/templates/github-workflow.yml)) |
 
 ## Your taste
+
+Every run starts with an open moment: tell it the sites you love and why, and what you hate. It saves all of it to your taste profile, and your dislikes become rules straight away.
+
+**Review board.** Directions open in a page where you switch between them, mark each Pick, Take parts or Reject, and write notes. "Copy feedback" pastes them back to the AI, so it works with any tool, not just Claude.
+
+**Other skills.** If other design skills or rules files are loaded, it tells you which ones could conflict and asks which wins.
 
 On first run it offers a short taste setup: real sites, fonts, palettes and motion, and you say what you like and why. It saves `.studio/taste-profile.md` in your project or `~/.studio/taste-profile.md` for all projects. When you say you dislike something, it becomes a rule straight away.
 
