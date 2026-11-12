@@ -40,7 +40,7 @@ Never default to Inter, Geist, Space Grotesk, or Instrument Serif — the slop c
 Build one live HTML page, not a list of names. Changing fonts and colors doesn't change Claude's default arrangement, so the sheet must avoid it:
 - A real slice of *this* project (real headline, a paragraph of real body, a warning line, a couple of data rows, a link) rendered at real sizes.
 - 4–6 palettes, each a committed accent over near-black/near-white neutrals, applied live to that slice. Show accent / ink / paper swatches in the key beside the preview, not inside the design.
-- 4 type pairings, each rendered live on the slice.
+- 4 type pairings, each rendered live on the slice. If design-studio is installed, use its `templates/font-picker.html` so the user can also search the full font library.
 - **Show options in the real thing.** The actual page or screen with its real layout, not a card or a specimen block.
 - **Vary more than hue.** Four options that are the same layout with the accent swapped teach nothing. Vary weight, size contrast, density and how much color is used, as well as the hue.
 - **No labels on the design.** Font and palette names go in a small key outside the preview, never on the design itself.

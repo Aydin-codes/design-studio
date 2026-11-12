@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.13
+- Fix a part: point at one section and it locks everything else, explains what's wrong in plain words, and shows three fixes for just that part.
+- Ranked taste rules: likes and dislikes are saved with strength and scope; repeated patterns become suggested rules (at most 3 per session, asked at the end); you keep up to 15.
+- Every direction names a signature element, one thing only this site has, and the critique checks it's built.
+- Font picker: Claude's suggestions plus the full library (every Google Font and Fontshare), searchable, on your own text, with common AI picks flagged.
+- New tells: slight decorative tilts, second-tier default fonts, meaningless pastel chips, sections built only from code shapes, the fake "terminal" card, explaining the process instead of showing results.
+
+## v0.12.1
+- Links updated to the new GitHub name, Aydin-codes.
+- The edit check only blocks real UI files. Plain .js and .ts files outside UI folders (components, pages, app, styles...) are never blocked, and you can list paths to always allow in `.studio/state.json` (`allow`).
+- If the check script ever hits an unexpected error inside a hook, it lets the edit through instead of blocking your session.
+- Tests for the check script, run on Windows, macOS and Linux on every push.
+
 ## v0.12
 - Asks what matters most: how it looks, how it works, or both. "Works" skips the taste questions, uses clean defaults, and makes directions differ in how fast the main tasks get done.
 

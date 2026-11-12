@@ -6,6 +6,9 @@ import fs from "node:fs";
 import path from "node:path";
 
 const UI_EXT = new Set([".html", ".htm", ".css", ".scss", ".sass", ".less", ".js", ".jsx", ".ts", ".tsx", ".vue", ".svelte", ".astro", ".mdx"]);
+// Always UI. Plain .js/.ts count as UI only inside UI folders, so logic and API edits are never blocked.
+const ALWAYS_UI = new Set([".html", ".htm", ".css", ".scss", ".sass", ".less", ".jsx", ".tsx", ".vue", ".svelte", ".astro", ".mdx"]);
+const UI_DIRS = new Set(["components", "component", "pages", "app", "views", "screens", "ui", "styles", "layouts", "sections", "site", "public", "theme"]);
 const STEPS = ["", "find the project", "setup", "job, output, depth", "interview", "references", "directions", "spec", "build", "critique and check-in"];
 
 function readStdin() {
@@ -29,7 +32,7 @@ function save(root, s) {
 function buildProblems(root, s) {
   const p = [];
   if (!s.frozen_confirmed) p.push("The user hasn't confirmed the job's keep/change lists (step 3b). Show them and wait for confirmation.");
-  if (s.job !== "polish" && !(Array.isArray(s.references) && s.references.length)) p.push("No human-made reference recorded yet (step 5, rule 8). Ask the user for one, or show two or three real ones, and record what to take from each in references.");
+  if (s.job !== "polish" && s.job !== "fix-part" && s.job !== "fix a part" && !(Array.isArray(s.references) && s.references.length)) p.push("No human-made reference recorded yet (step 5, rule 8). Ask the user for one, or show two or three real ones, and record what to take from each in references.");
   if (!String(s.direction || "").trim()) p.push(s.job === "polish"
     ? "The user hasn't approved which fixes to apply (step 6, polish list)."
     : "The user hasn't picked a direction yet (step 6). Show the three directions and wait for their pick.");
@@ -50,7 +53,13 @@ function isUiFile(root, file) {
   const rel = path.relative(root, abs);
   if (rel.startsWith("..") || rel.split(path.sep)[0] === ".studio") return false;
   if (path.basename(abs) === "DESIGN.md") return false;
-  return UI_EXT.has(path.extname(abs).toLowerCase());
+  const allow = (state && Array.isArray(state.allow)) ? state.allow : [];
+  if (allow.some(a => rel.split(path.sep).join("/").startsWith(String(a).replace(/^\.\//, "")))) return false;
+  const ext = path.extname(abs).toLowerCase();
+  if (ALWAYS_UI.has(ext)) return true;
+  if (ext !== ".js" && ext !== ".ts") return false;
+  if (/\.(config|test|spec)\.[jt]s$/.test(abs)) return false;
+  return rel.split(path.sep).slice(0, -1).some(d => UI_DIRS.has(d.toLowerCase()));
 }
 
 // ---- tell scan: searches built files for known AI-design tells ----
@@ -60,7 +69,9 @@ const HARD = [
   [/trusted by [\d,]+|[\d,]{2,}\+ (users|customers|teams|happy)|★★★★★|\b4\.\d\/5\b/i, "social proof or numbers the user didn't give (check they're real)"],
 ];
 const SOFT = [
-  [/font-family[^;"}]*\b(Inter|Geist|Space Grotesk|Instrument Serif)\b|family=(Inter|Geist|Space\+Grotesk|Instrument\+Serif)\b|@fontsource\/(inter|geist|space-grotesk|instrument-serif)\b/i, "default AI font"],
+  [/font-family[^;}]*\b(Inter|Geist|Space Grotesk|Instrument Serif)\b|family=(Inter|Geist|Space\+Grotesk|Instrument\+Serif)\b|@fontsource\/(inter|geist|space-grotesk|instrument-serif)\b/i, "default AI font"],
+  [/font-family[^;}]*\b(Outfit|Plus Jakarta Sans|DM Sans|Manrope|Bricolage Grotesque|Sora|Urbanist)\b|family=(Outfit|Plus\+Jakarta\+Sans|DM\+Sans|Manrope|Bricolage\+Grotesque|Sora|Urbanist)\b|@fontsource(-variable)?\/(outfit|plus-jakarta-sans|dm-sans|manrope|bricolage-grotesque|sora|urbanist)\b/i, "second-tier default font (Claude's pick when told not Inter)"],
+  [/rotate\(\s*-?(0?\.\d+|[1-3](\.\d+)?)deg\s*\)|\b-?rotate-(1|2|3)\b/i, "slight tilt used as decoration"],
   [/\buppercase\b[^"'\n]*\btracking-|text-transform:\s*uppercase[^}]*letter-spacing|letter-spacing[^}]*text-transform:\s*uppercase/i, "uppercase spaced label (eyebrow)"],
   [/from-(purple|violet|indigo|fuchsia)-\d|linear-gradient\([^)]*(#(7c3aed|8b5cf6|6366f1|a855f7|9333ea|4f46e5)|purple|violet|indigo)/i, "purple/indigo gradient"],
   [/background-clip:\s*text|bg-clip-text/i, "gradient text"],
@@ -105,6 +116,8 @@ function fail(msg, code) { process.stderr.write(msg + "\n"); process.exit(code);
 
 const cmd = process.argv[2] || "status";
 const hook = cmd.startsWith("hook-");
+// A hook must never break the user's session: on any unexpected error, let the action through.
+if (hook) process.on("uncaughtException", e => { process.stderr.write("design-studio check error (ignored): " + e.message + "\n"); process.exit(0); });
 const input = hook ? readStdin() : {};
 const root = findRoot(input.cwd || process.cwd());
 const state = root ? load(root) : null;
@@ -158,7 +171,7 @@ switch (cmd) {
     if (!isUiFile(root, file)) process.exit(0);
     const b = buildProblems(root, state);
     if (b.length) fail("design-studio blocked this edit: you're not at the build step yet.\n- " + b.join("\n- ") +
-      "\nIf this edit isn't part of the design work, ask the user; if they agree, set active: false in .studio/state.json.", 2);
+      "\nIf this edit isn't part of the design work, ask the user; if they agree, add its folder to 'allow' in .studio/state.json (or set active: false to pause design-studio).", 2);
     process.exit(0);
   }
   case "hook-post": {

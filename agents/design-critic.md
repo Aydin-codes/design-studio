@@ -27,5 +27,6 @@ Check, in this order:
 7. Does it match the readers and how they'll use it (phone, glance, print)?
 8. The keep list: did anything frozen change?
 9. References: does it reach the level and take what the user asked from them, or did it slide back to defaults?
+10. Signature element: is there one thing only this site has, built and visible, or is it all boxes, pills and lines?
 
 Return at most 10 findings, most important first. For each: where it is (which screenshot, which part), what's wrong in one plain sentence, the rule or tell it breaks, and a specific fix. Then one line: the single change that would most improve it. No praise, no summary of what's good.

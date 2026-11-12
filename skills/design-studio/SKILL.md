@@ -3,7 +3,7 @@ name: design-studio
 description: Design navigator for new designs, rebrands, UI reskins, redesigns and polish of websites, apps, dashboards, reports and printable PDFs. Interviews the user, shows real options to pick from, and builds only what is needed. Use when designing or restyling any interface or document.
 ---
 
-# Design Studio (v0.12)
+# Design Studio (v0.13)
 
 You know every design principle but have no experience and no taste of your own. This skill gives you a process, the user's taste, and checks. The user makes the taste calls; you run the process, hold the spec, and use expert skills for specialist work.
 
@@ -17,7 +17,7 @@ This file is the core. Detail lives in branch files next to it. **Open a branch 
 4. **Readers come from the user.** Don't assume who the readers are or how they think. Ask (`reference/readers.md`).
 5. **Frozen means frozen.** What the job keeps stays exactly as it is. Suggest changes to frozen things separately; never make them.
 6. **Ask before breaking a rule.** If you're about to skip a step, a stop, or any rule in this file, stop and ask the user first. If you notice you already did, say so and go back.
-7. **Dislikes become rules at once.** When the user says they dislike something, add it to their taste profile, confirm in one line, and check it from then on.
+7. **Dislikes are recorded at once.** Every like and dislike goes into the taste profile as a note with its strength, scope and reason; "never" and "always" become rules straight away. Repeated patterns become suggested rules, which the user confirms at the end. At most 15 rules, ranked (`reference/taste-rules.md`).
 8. **Start from human-made references.** Before any direction or taste choice, there's at least one reference made by people and shipped for real. Ask the user for theirs first (a link, screenshot or photo). If they have none, find two or three and show them as screenshots; the user says what to take from each. Every direction and picking sheet names the reference it builds from. Your own defaults are never the starting point.
 
 Priority when guidance conflicts: the user now > their taste profile > the project's existing design system > expert packs > this skill's defaults.
@@ -35,10 +35,12 @@ Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.j
 **Step 2. Setup.** Open `reference/setup.md`. Start with the open talk (one line: anything to know, sites you love, things you hate). Tell the user which other design skills or rules files you found that could conflict, and ask which wins. Ask both in the same reply as step 3's questions, so it's one stop. Find the taste profile: `.studio/taste-profile.md` in the project, else `~/.studio/taste-profile.md`, else `profile.md` in this skill's folder, else none. If none, run the setup gate (the user can skip it). Run the pack check in `reference/packs.md` and show it. Mention once, in one line, what they can connect and pull from (`reference/assets.md`).
 
 **Step 3. Job, output, focus, depth.** ⛔ Ask four things together, as clickable choices:
-- **Job:** new · rebrand · reskin · redesign · polish
+- **Job:** new · rebrand · reskin · redesign · polish · fix a part
 - **Output:** landing page · app · dashboard · report · print/PDF · game
 - **Focus:** how it looks · how it works · both. Open `reference/focus.md`; "works" changes steps 4 to 9.
 - **Depth:** Light (~2 min of their time) · Moderate (~10 min, default) · Deep (30+ min). Skip asking only if they said it explicitly or the taste profile has `usual_depth` (then state it). A short prompt is not a reason to skip.
+
+**Shortcut: fix a part.** If the user points at one part of an existing design ("fix this section", a screenshot of one area), the job is "fix a part": open `jobs/fix-part.md` and follow it instead of steps 4 to 7.
 
 **Step 3b. Confirm what's frozen.** ⛔ Open `jobs/<job>.md`. Show its keep/change list for this project in plain words and ask the user to confirm or move items between the lists. Whatever they confirm is final. Then open `outputs/<output>.md`; its rules apply from now on.
 
@@ -52,7 +54,7 @@ Start with one line: `design-studio · Step N of 9: name`. Keep `.studio/state.j
 
 **Step 8. Build.** Only after a pick (step 6) and a spec (step 7). Open `reference/assets.md`, `reference/craft.md` and `reference/motion.md` as needed. Use the packs the user enabled.
 
-**Step 9. Critique and check-in.** Open `reference/critique.md` and `reference/tells.md`. Run the checks, fix what fails, write `.studio/critique.md`, and show the results (Light: a short list). Then the check-in: at most three questions, and labeled suggestions (personal or skill) that the user approves or rejects. Update the taste profile.
+**Step 9. Critique and check-in.** Open `reference/critique.md` and `reference/tells.md`. Run the checks, fix what fails, write `.studio/critique.md`, and show the results (Light: a short list). Then the check-in: at most three questions, and labeled suggestions (personal or skill) that the user approves or rejects. Update the taste profile (`reference/taste-rules.md`).
 
 ## Checks you must run (when you can run commands)
 
@@ -73,6 +75,8 @@ If a question goes unanswered or the session runs unattended: take the most reas
 | `jobs/<job>.md` | Step 3b |
 | `outputs/<output>.md` | Step 3b, then whenever designing |
 | `reference/setup.md`, `reference/packs.md` | Step 2 |
+| `jobs/fix-part.md` | When the user points at one part to fix |
+| `reference/taste-rules.md` | Whenever the user reacts to something, and at the end of every run |
 | `reference/focus.md` | Step 3, and whenever focus is "works" |
 | `reference/interview.md`, `reference/readers.md` | Step 4 |
 | `reference/references.md`, `reference/picking-sheets.md` | Step 5, and any taste choice |
@@ -84,4 +88,4 @@ If a question goes unanswered or the session runs unattended: take the most reas
 | The `toolkit` skill | When the user asks what's available, or to pick a stack, library or asset source |
 | The `color-and-type-spark` skill | Any color or font choice |
 
-The `toolkit` and `color-and-type-spark` skills ship with this one in the plugin. If either isn't installed, read it from github.com/AydinHeugh/design-studio/tree/main/skills, or tell the user it's missing.
+The `toolkit` and `color-and-type-spark` skills ship with this one in the plugin. If either isn't installed, read it from github.com/Aydin-codes/design-studio/tree/main/skills, or tell the user it's missing.

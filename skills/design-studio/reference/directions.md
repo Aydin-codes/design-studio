@@ -13,7 +13,7 @@ Say which axis you chose and why. Three versions that differ only in color teach
 - If the user brought their own idea, direction 1 is built from it, faithfully. The other two branch off it.
 - All three follow the rules in SKILL.md and the output file. They differ in *how* they show the product, not in whether they do.
 - Text-left, image-right may appear at most once, and only on purpose.
-- Each direction gets one line on the idea behind it, one on its cost, and one naming its hero asset and source (`reference/assets.md`).
+- Each direction gets one line on the idea behind it, one on its cost, one naming its hero asset and source (`reference/assets.md`), and one naming its **signature element**: the one thing only this site would have (a custom illustration style, real photography of the actual thing, a custom or unusual typeface, a layout or interaction that teaches the product). Cover the logo: the signature should still say whose it is. A tilt, a gradient or a color isn't a signature.
 - Moving outputs (landing, portfolio, game): show directions in a live page that plays, with a replay control. Static UI: a canvas is fine.
 - Show one direction at a time, full size, with instant switching (emil `prototype` pattern).
 

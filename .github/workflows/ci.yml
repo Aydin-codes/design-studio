@@ -1,0 +1,23 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Tests for check.mjs
+        run: node --test
+      - name: JSON files parse
+        run: node -e "for (const f of ['.claude-plugin/plugin.json','.claude-plugin/marketplace.json','hooks/hooks.json','skills/design-studio/templates/state.json']) { JSON.parse(require('fs').readFileSync(f,'utf8')); console.log('ok', f) }"
+      - name: Skills have name and description
+        shell: bash
+        run: |
+          for f in skills/*/SKILL.md; do
+            head -5 "$f" | grep -q '^name:' && head -5 "$f" | grep -q '^description:' || { echo "missing frontmatter: $f"; exit 1; }
+            echo "ok $f"
+          done

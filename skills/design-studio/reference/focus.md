@@ -4,7 +4,6 @@ Ask with job, output and depth: **What matters most here: how it looks, how it w
 
 ## Works (function first)
 For people who want the job done and don't care about color or corners. Respect that; it's their taste.
-- **One honest line, once:** if clients, investors or the public will see it, an AI-made look can cost trust even when it works well. Then follow their answer and don't bring it up again.
 - **Skip** the taste setup, picking sheets and visual taste questions. Use clean, quiet defaults from the toolkit (a component library's default theme, system fonts, one accent) without asking. State them in one line.
 - **References** are products that work well for this job: their flows, density and shortcuts, not their looks.
 - **Interview** focuses on tasks: the 3 most common tasks, who does them, how often, on what device, and what goes wrong today.

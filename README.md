@@ -7,7 +7,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.12-111111?style=flat-square" alt="Version 0.12">
+  <img src="https://img.shields.io/github/v/tag/Aydin-codes/design-studio?style=flat-square&color=111111&label=version" alt="Latest version">
+  <img src="https://img.shields.io/github/actions/workflow/status/Aydin-codes/design-studio/ci.yml?style=flat-square&label=tests" alt="Tests">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
   <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
 </p>
@@ -29,19 +30,19 @@ design-studio makes Claude (and other AI coding tools) work the way a designer w
 You don't need design vocabulary. You react to real options and say what you like in plain words; it tells you what that's called and where it comes from, so you can ask for it directly next time. You still review and decide.
 
 > [!NOTE]
-> v0.12 is early and tested on a handful of projects. Feedback and issues are welcome.
+> v0.13 is early and tested on a handful of projects. Feedback and issues are welcome.
 
 ## Install
 
 **Claude Code** (includes the automatic checks):
 ```
-/plugin marketplace add AydinHeugh/design-studio
+/plugin marketplace add Aydin-codes/design-studio
 /plugin install design-studio@design-studio
 ```
 
 **Any agent that supports skills:**
 ```
-npx skills add AydinHeugh/design-studio
+npx skills add Aydin-codes/design-studio
 ```
 
 **Claude app:** zip the `skills/design-studio` folder and upload it under Customize → Skills → Upload a skill (code execution must be on).
@@ -117,6 +118,12 @@ Every run starts with an open moment: tell it the sites you love and why, and wh
 
 **Review board.** Directions open in a page where you switch between them, mark each Pick, Take parts or Reject, and write notes. "Copy feedback" pastes them back to the AI, so it works with any tool, not just Claude.
 
+**Rules you confirm.** Every like and dislike is saved with how strongly you feel and where it applies. Patterns that repeat become suggested rules, at most 3 per session, asked at the end. You keep up to 15, ranked.
+
+**Fix one part.** Point at a section ("this looks AI-made") and it locks the rest, names what's wrong in plain words, and shows three fixes for just that part.
+
+**Font picker.** Claude suggests pairings for your product, and you can also search every Google Font and Fontshare font on your own words, with common AI picks flagged.
+
 **Other skills.** If other design skills or rules files are loaded, it tells you which ones could conflict and asks which wins.
 
 On first run it offers a short taste setup: real sites, fonts, palettes and motion, and you say what you like and why. It saves `.studio/taste-profile.md` in your project or `~/.studio/taste-profile.md` for all projects. When you say you dislike something, it becomes a rule straight away.
@@ -140,6 +147,7 @@ Expert skills you switch on per project; only what you enable gets loaded. See [
 .claude-plugin/          plugin and marketplace manifests
 hooks/hooks.json         Claude Code hooks that run the checks
 agents/design-critic.md  fresh-eyes reviewer that sees only screenshots and the plan
+tests/                   tests for the check script (node --test)
 skills/toolkit/          stacks, libraries and asset sources, with licences
 skills/color-and-type-spark/  live picking sheets for colors and fonts
 skills/design-studio/

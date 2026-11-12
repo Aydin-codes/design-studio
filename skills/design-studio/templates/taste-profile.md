@@ -6,9 +6,11 @@ suggest_content: no
 
 ## Taste setup results
 
-## Loves (with why)
+## Rules (max 15, ranked)
+(confirmed by you; see reference/taste-rules.md)
 
-## Hates (with why)
+## Notes
+(likes and dislikes with strength, scope and why; repeated ones become suggested rules)
 
 ## Personal tells
 
