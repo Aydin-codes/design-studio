@@ -8,7 +8,7 @@ This skill covers the game's **interface**: menus, HUD, buttons, screens, onboar
 ## Rules
 - **Motion is part of the identity:** responsive, playful feedback on every action.
 - **Readable while playing:** HUD elements large, high contrast, in consistent places.
-- **Assets from free libraries** (`reference/assets.md`): Kenney and Quaternius for models, Freesound for sounds. Check every licence and keep an asset sheet.
+- **Assets from free libraries** (`reference/assets.md`): Kenney and Quaternius for models, Freesound for sounds. Check every license and keep an asset sheet.
 - **Don't generate characters or logos** to ship; use the user's art or licensed assets.
 
 ## Stack (new projects)

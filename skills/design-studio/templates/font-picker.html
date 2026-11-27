@@ -179,7 +179,7 @@ $("srcs").innerHTML = [["","All sources"],["Google","Google"],["Fontshare","Font
 $("q").oninput = () => render(); $("hideAi").onchange = () => render();
 $("more").onclick = () => { shown += 60; render(true); };
 function feedback() {
-  const lic = n => { const x = byName.get(String(n).toLowerCase()); return x ? (x.src === "Google" ? "Google Fonts, open licence" : "Fontshare, free for personal and commercial use") : "not in the list"; };
+  const lic = n => { const x = byName.get(String(n).toLowerCase()); return x ? (x.src === "Google" ? "Google Fonts, open license" : "Fontshare, free for personal and commercial use") : "not in the list"; };
   return `# Font choice: ${board.project}\n\n- Headings: ${st.heading || "not chosen"}${st.heading ? " (" + lic(st.heading) + ")" : ""}\n- Body: ${st.body || "not chosen"}${st.body ? " (" + lic(st.body) + ")" : ""}\n${st.notes.trim() ? "\n## Notes\n" + st.notes.trim() + "\n" : ""}`;
 }
 $("copy").onclick = async () => {
