@@ -225,7 +225,7 @@ In your project it writes `DESIGN.md` (the plan) and `.studio/` (state, critique
 
 ## Built with
 
-| | | What it does here |
+| Icon | Name | What it does here |
 |:-:|---|---|
 | <img src=".github/assets/logos/nodedotjs.svg" alt="" width="28"> | [Node.js](https://nodejs.org) | Runs the check script. No packages to install |
 | <img src=".github/assets/logos/githubactions.svg" alt="" width="28"> | [GitHub Actions](https://github.com/features/actions) | Runs the tests on Windows, macOS and Linux on every push |
