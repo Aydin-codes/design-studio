@@ -14,4 +14,4 @@ Thanks for helping. design-studio is small and opinionated, so please open an is
 - Taste stays with the user. Don't add rules that pick colors, fonts or styles for people.
 - Don't add rules about readers that the user didn't give.
 - Keep `SKILL.md` short. Detail goes in a branch file that opens at its step.
-- Run `claude plugin validate .` and test the hooks before opening a PR.
+- Run `node --test` and `claude plugin validate .`, and test the hooks before opening a PR.
