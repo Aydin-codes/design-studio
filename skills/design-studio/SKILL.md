@@ -88,4 +88,4 @@ If a question goes unanswered or the session runs unattended: take the most reas
 | The `toolkit` skill | When the user asks what's available, or to pick a stack, library or asset source |
 | The `color-and-type-spark` skill | Any color or font choice |
 
-The `toolkit` and `color-and-type-spark` skills ship with this one in the plugin. If either isn't installed, read it from github.com/Aydin-codes/design-studio/tree/main/skills, or tell the user it's missing.
+The `toolkit` and `color-and-type-spark` skills ship with this one in the plugin. If either isn't installed, read the toolkit from github.com/Aydin-codes/toolkit and color-and-type-spark from github.com/Aydin-codes/design-studio/tree/main/skills, or tell the user it's missing.
