@@ -148,7 +148,7 @@ Expert skills you switch on per project; only what you enable gets loaded. See [
 hooks/hooks.json         Claude Code hooks that run the checks
 agents/design-critic.md  fresh-eyes reviewer that sees only screenshots and the plan
 tests/                   tests for the check script (node --test)
-skills/toolkit/          stacks, libraries and asset sources, with licences
+skills/toolkit/          copy of github.com/Aydin-codes/toolkit: stacks, libraries and asset sources, with licences
 skills/color-and-type-spark/  live picking sheets for colors and fonts
 skills/design-studio/
 ├── SKILL.md             the core: rules and the nine steps

@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- The toolkit now has its own repo, github.com/Aydin-codes/toolkit. `skills/toolkit/` is a copy of its 0.1.0 draft, so one install still gets both.
+
 ## v0.13
 - Fix a part: point at one section and it locks everything else, explains what's wrong in plain words, and shows three fixes for just that part.
 - Ranked taste rules: likes and dislikes are saved with strength and scope; repeated patterns become suggested rules (at most 3 per session, asked at the end); you keep up to 15.
