@@ -1,4 +1,4 @@
-<p align="center"><img src=".github/assets/logo.svg" alt="design-studio logo: a fan of paint swatch cards with the vermilion one picked" width="96"></p>
+<p align="center"><img src=".github/assets/logo.svg" alt="design-studio logo: one bright pink-to-yellow brush stroke on a black app tile" width="96"></p>
 
 <h1 align="center">design-studio</h1>
 
