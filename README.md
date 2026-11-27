@@ -16,7 +16,7 @@
 <p align="center">
   <a href="#install">Install</a> ·
   <a href="#how-it-works">How it works</a> ·
-  <a href="skills/toolkit/SKILL.md">Toolkit</a> ·
+  <a href="https://github.com/Aydin-codes/toolkit">Toolkit</a> ·
   <a href="CHANGELOG.md">Changelog</a> ·
   <a href="CONTRIBUTING.md">Contributing</a>
 </p>
@@ -139,7 +139,7 @@ Expert skills you switch on per project; only what you enable gets loaded. See [
 | `motion` | GSAP, Motion, Three.js, Rive, Lottie | Motion identity for landing pages and games |
 | `native-apple` | Apple HIG skills | Native iOS and macOS apps |
 
-**Assets** you can pull from (icons, fonts, photos, 3D, connectors), with licences: [toolkit](skills/toolkit/SKILL.md).
+**Assets** you can pull from (icons, fonts, photos, 3D, connectors), with licences: [toolkit](https://github.com/Aydin-codes/toolkit).
 
 ## Files
 
