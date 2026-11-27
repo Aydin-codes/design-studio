@@ -1,7 +1,5 @@
 <h1 align="center">design-studio</h1>
 
-<h3 align="center">You asked for your AI startup's landing page.<br>You got the same purple page as everyone else.</h3>
-
 <p align="center"><b>design-studio makes Claude ask first, show you real options, and build only what you pick.</b><br>
 <sub>Works in Claude Code, the Claude app, Cursor, Codex and other AI coding tools.</sub></p>
 
