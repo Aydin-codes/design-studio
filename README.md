@@ -1,10 +1,9 @@
-<p align="center">
-  <img src=".github/assets/logo.svg" alt="design-studio logo: three option cards, the middle one picked" width="120">
-</p>
-
 <h1 align="center">design-studio</h1>
 
-<p align="center">Makes Claude design like a real designer. It asks what you want, shows you options to pick from, and only then builds.</p>
+<h3 align="center">You asked for your bakery's website.<br>You got the same purple page as everyone else.</h3>
+
+<p align="center"><b>design-studio makes Claude ask first, show you real options, and build only what you pick.</b><br>
+<sub>Works in Claude Code, the Claude app, Cursor, Codex and other AI coding tools.</sub></p>
 
 <p align="center">
   <a href="CHANGELOG.md"><img src="https://img.shields.io/github/v/tag/Aydin-codes/design-studio?style=flat-square&color=e4572e&label=version" alt="Latest version"></a>
@@ -33,11 +32,15 @@
 
 ## What it is
 
-When you ask an AI to design a page, it usually starts coding straight away, and you get the page everyone gets: a purple gradient, a small label over a big headline, "Trusted by 10,000+ teams" and the Inter font.
+Getting an AI to build a page is easy. Getting it to build *your* page means it has to stop and ask.
 
-design-studio is a skill you add to Claude (it also works in Cursor, Codex and other AI coding tools). It makes the AI work the way a designer works with a client. It asks what you're making and what you like. It shows you three real directions to choose from. It writes down the plan you agreed on, builds only that, and checks the result before it says it's done. It also remembers your taste for the next project.
+Left alone, the AI guesses. It knows every design rule but nothing about your customers, the sites you love or the things that make you cringe, so every guess lands on the same average page: a purple gradient, a small label over a big headline, "Trusted by 10,000+ teams" and the Inter font. Then you fix it by hand, or live with it.
 
-It works for websites, app screens, dashboards, reports, printable PDFs and game screens. You don't need to know any design words: you react to what you see, and it tells you what the thing you liked is called.
+design-studio turns the AI into a designer working for you. It asks what you're making and what you like. It shows three real directions and waits for your pick. It writes the plan down, builds only that, and checks the result for AI tells and your own dislikes before it calls the work done. Next project, it already knows your taste.
+
+One rule runs through all of it: **taste comes from you.** The AI never picks your colors, fonts or style on its own. You don't need design words either. You react to what you see, and it tells you what the thing you liked is called.
+
+It works for websites, app screens, dashboards, reports, printable PDFs and game screens.
 
 ## See it work
 
@@ -62,9 +65,12 @@ It works for websites, app screens, dashboards, reports, printable PDFs and game
 
 ## How it works
 
-| <img src=".github/assets/icons/speech-balloon.png" alt="" width="56"> | <img src=".github/assets/icons/artist-palette.png" alt="" width="56"> | <img src=".github/assets/icons/memo.png" alt="" width="56"> | <img src=".github/assets/icons/check-mark-button.png" alt="" width="56"> |
-|:-:|:-:|:-:|:-:|
-| **1. Talk**<br>What you're making, what must stay the same, what you like and hate | **2. Pick**<br>Three real directions. Pick one, mix them, or say no to all three | **3. Plan**<br>The plan you agreed on goes into `DESIGN.md`, so nothing gets lost | **4. Build and check**<br>It builds only what you picked, then checks for AI tells and your dislikes |
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/how-it-works-dark.png">
+    <img src=".github/assets/how-it-works-light.png" width="760" alt="Diagram, How design-studio works: four numbered stages on a winding path. 1. Talk: sites you love and hate; job, output and depth; what must stay the same; questions about your readers. 2. Pick: real references you like; three directions side by side; pick, mix or reject; fonts and colors you choose. 3. Plan: the plan goes in DESIGN.md; only what's needed; you approve it. A red label on the path says Claude Code blocks UI edits until here. 4. Build and check: builds only what you picked; scans for AI tells; checks it against your taste; remembers your taste.">
+  </picture>
+</p>
 
 Every reply starts with the step it's on, and it stops and waits for you at each decision. You choose how much of your time it takes: **Light** (about 2 minutes), **Moderate** (about 10, the default) or **Deep** (30 or more).
 
@@ -216,7 +222,7 @@ In your project it writes `DESIGN.md` (the plan) and `.studio/` (state, critique
 |:-:|---|---|
 | <img src=".github/assets/logos/nodedotjs.svg" alt="" width="28"> | [Node.js](https://nodejs.org) | Runs the check script. No packages to install |
 | <img src=".github/assets/logos/githubactions.svg" alt="" width="28"> | [GitHub Actions](https://github.com/features/actions) | Runs the tests on Windows, macOS and Linux on every push |
-| <img src=".github/assets/logo.svg" alt="" width="28"> | [toolkit](https://github.com/Aydin-codes/toolkit) | The list of real fonts, icons and assets it pulls from |
+| <img src=".github/assets/icons/toolbox.png" alt="" width="28"> | [toolkit](https://github.com/Aydin-codes/toolkit) | The list of real fonts, icons and assets it pulls from |
 
 ## Current limits
 
