@@ -3,14 +3,16 @@
 </p>
 
 <p align="center">
-  A Claude skill that designs like a real designer: it interviews you, shows real options, and you pick.
+  A Claude skill that designs like a real designer: it interviews you, shows real options, and you pick.<br>
+  <b>Landing pages, app screens, dashboards, reports, printable PDFs and game UI, in Claude Code, the Claude app, Cursor and Codex.</b>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/tag/Aydin-codes/design-studio?style=flat-square&color=111111&label=version" alt="Latest version">
-  <img src="https://img.shields.io/github/actions/workflow/status/Aydin-codes/design-studio/ci.yml?style=flat-square&label=tests" alt="Tests">
-  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
-  <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/github/v/tag/Aydin-codes/design-studio?style=flat-square&color=111111&label=version" alt="Latest version"></a>
+  <a href="https://github.com/Aydin-codes/design-studio/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Aydin-codes/design-studio/ci.yml?style=flat-square&label=tests" alt="Tests"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license"></a>
+  <a href="#install"><img src="https://img.shields.io/badge/Claude_Code-plugin-111111?style=flat-square&logo=claude&logoColor=white" alt="Claude Code plugin"></a>
+  <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-compatible-111111?style=flat-square" alt="Agent Skills compatible"></a>
 </p>
 
 <p align="center">
@@ -21,9 +23,15 @@
   <a href="CONTRIBUTING.md">Contributing</a>
 </p>
 
-<!-- TODO: screenshot of a real run (the directions step, three options side by side), 1600px wide, saved as .github/assets/directions.png
-<p align="center"><img src=".github/assets/directions.png" alt="Three design directions shown side by side for the user to pick from" width="830"></p>
--->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/font-picker-dark.png">
+    <img src=".github/assets/font-picker-light.png" width="838" alt="The design-studio font picker for a sample bakery site. Three suggested pairings (Fraunces with Public Sans, Schibsted Grotesk with Literata, Archivo with Newsreader) each show the site's real headline and body text, with one line on why each fits. Fraunces and Public Sans is chosen in the tray at the bottom, next to a notes box and a Copy choice button.">
+  </picture>
+</p>
+<p align="center"><sub>The font picker from <code>templates/font-picker.html</code>, filled in for a sample bakery. Claude suggests three pairings on the site's own words; you pick one or search every Google Font and Fontshare font, then paste your choice back.</sub></p>
+
+<!-- TODO: screenshot of a real run at the directions step (three options on the review board), 1676px wide, saved as .github/assets/directions.png -->
 
 design-studio makes Claude (and other AI coding tools) work the way a designer works with a client. It asks what you're making, confirms what must stay the same, shows you real options to pick from, writes a plan, builds only what's needed, then checks the result against your own taste. It covers websites, app screens, dashboards, reports, printable PDFs and game interfaces.
 
@@ -50,6 +58,17 @@ npx skills add Aydin-codes/design-studio
 **Other tools:** copy `skills/design-studio/` into your project and point your AI at `SKILL.md`.
 
 Then ask for a design, or type `/design-studio`. It starts by asking what the job is, what you're making and how much time you want to spend.
+
+## Use
+
+```text
+/design-studio a landing page for my bakery
+/design-studio reskin this dashboard, keep how everything works
+/design-studio polish the pricing page
+/design-studio fix the hero, it looks AI-made
+```
+
+Or ask in your own words; Claude picks the skill up when the task is design.
 
 ## Why this exists
 
@@ -96,9 +115,9 @@ Every reply starts with the step it's on. Depth sets how much of your time it ta
 
 ## Checks that keep it on track
 
-Big skills get skimmed. v0.9 fixes that three ways:
+Big skills get skimmed. design-studio handles that three ways:
 
-1. **Short core, branch files.** `SKILL.md` is ~80 lines. The detail for each job, output and step lives in its own file, opened only when that path comes up.
+1. **Short core, branch files.** `SKILL.md` is ~90 lines. The detail for each job, output and step lives in its own file, opened only when that path comes up.
 2. **State file.** The skill keeps `.studio/state.json` in your project: step, job, whether you confirmed the frozen list, your pick.
 3. **A check script** (`scripts/check.mjs`, Node, no dependencies):
    - Won't let it edit UI files before you've confirmed the job, picked a direction and the plan exists.
@@ -152,12 +171,12 @@ skills/toolkit/          copy of github.com/Aydin-codes/toolkit: stacks, librari
 skills/color-and-type-spark/  live picking sheets for colors and fonts
 skills/design-studio/
 ├── SKILL.md             the core: rules and the nine steps
-├── jobs/                new, rebrand, reskin, redesign, polish
+├── jobs/                new, rebrand, reskin, redesign, polish, fix a part
 ├── outputs/             landing, app, dashboard, report, print, game
 ├── reference/           one file per step, plus craft, motion and tells
 ├── scripts/check.mjs    the checks
 ├── sources/             expert rules, credited
-└── templates/           state, taste profile, GitHub workflow
+└── templates/           state, taste profile, review board, font picker, GitHub workflow
 ```
 
 In your project it writes `DESIGN.md` (the plan) and `.studio/` (state, critique, taste profile).
