@@ -1,6 +1,6 @@
 <h1 align="center">design-studio</h1>
 
-<h3 align="center">You asked for your bakery's website.<br>You got the same purple page as everyone else.</h3>
+<h3 align="center">You asked for your AI startup's landing page.<br>You got the same purple page as everyone else.</h3>
 
 <p align="center"><b>design-studio makes Claude ask first, show you real options, and build only what you pick.</b><br>
 <sub>Works in Claude Code, the Claude app, Cursor, Codex and other AI coding tools.</sub></p>
@@ -14,6 +14,7 @@
 
 <p align="center">
   <a href="#install"><b>Install</b></a> ·
+  <a href="#what-ai-makes-alone">What AI makes alone</a> ·
   <a href="#see-it-work">See it work</a> ·
   <a href="#how-it-works">How it works</a> ·
   <a href="https://github.com/Aydin-codes/toolkit">Toolkit</a> ·
@@ -23,12 +24,8 @@
 <p align="center">If design-studio helps you, please give it a star ⭐</p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/font-picker-dark.png">
-    <img src=".github/assets/font-picker-light.png" width="838" alt="The design-studio font picker for a sample bakery site. Three suggested font pairings each show the site's real headline and text, with one line on why each fits. Fraunces and Public Sans is chosen in the tray at the bottom, next to a notes box and a Copy choice button.">
-  </picture>
+  <img src=".github/assets/hero.png" width="838" alt="design-studio in one picture. A blue command bar reads /design-studio followed by what you're making, and works in Claude Code, the Claude app, Cursor and Codex. Below it, nine coloured step cards with 3D icons: 1 Find project, 2 Setup, 3 Job and depth, 4 Confirm frozen, 5 Interview, 6 References, 7 Directions, 8 Plan, 9 Build and check, under the line: Nine steps, and it stops for you at every decision. Lines lead to a panel: What you get, three real directions, DESIGN.md, your taste profile, a build checked for AI tells, and large numbers: 9 steps, 6 jobs, 6 outputs, 3 depths.">
 </p>
-<p align="center"><sub>Choosing fonts for a sample bakery site. Claude suggests three pairings on the site's own words, you pick one, and your choice goes back into the chat.</sub></p>
 
 ## What it is
 
@@ -42,6 +39,15 @@ One rule runs through all of it: **taste comes from you.** The AI never picks yo
 
 It works for websites, app screens, dashboards, reports, printable PDFs and game screens.
 
+## What AI makes alone
+
+<p align="center">
+  <img src=".github/assets/ai-slop.png" width="838" alt="Five kinds of AI slop. design-studio checks for all of them. A glowing robot in a graduation cap sits among five made-up pages, each tagged in red: a dark console page, Every API Standard. One Reference., tagged Every X. One Y. and code-shape panels; a cream editorial page, Wisdom over noise., tagged italic word and sans plus italic serif; a stock-photo startup page, You built the thing. Now fund it., tagged stock photo and one coloured line; a newsprint page, LAUNCH. GET SEEN. RISE., tagged everything shouts and no reading order; and a local landscaping template with a photo and quote form, tagged template hero and unchecked ratings.">
+</p>
+<p align="center"><sub>Five looks an AI falls back on when nobody asks you anything first. Each page is made up, modelled on real sites launched with AI builders, and every red tag is a tell design-studio checks for.</sub></p>
+
+<!-- BENCHMARKS: before/after results go here. -->
+
 ## See it work
 
 <table>
@@ -54,12 +60,10 @@ It works for websites, app screens, dashboards, reports, printable PDFs and game
     <td><sub><b>design-studio catches it.</b> Its check script found 14 problems in that page, including the made-up "10,000+ teams" and leftover "Lorem ipsum".</sub></td>
   </tr>
   <tr>
-    <td><img src=".github/assets/hook-block.png" alt="Terminal output: design-studio blocked this edit, you're not at the build step yet, followed by the four things still missing: confirmed keep and change lists, a human-made reference, a picked direction, and DESIGN.md."></td>
-    <td><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/font-library-dark.png"><img src=".github/assets/font-library-light.png" alt="The font picker's full library, searched for grotesk: Cabinet Grotesk and Clash Grotesk from Fontshare and Familjen Grotesk from Google, each showing the bakery's headline and text."></picture></td>
+    <td colspan="2" align="center"><img src=".github/assets/hook-block.png" width="640" alt="Terminal output: design-studio blocked this edit, you're not at the build step yet, followed by the four things still missing: confirmed keep and change lists, a human-made reference, a picked direction, and DESIGN.md."></td>
   </tr>
   <tr>
-    <td><sub><b>It can't skip steps.</b> In Claude Code, if Claude tries to edit your app before you've picked a direction, the edit is blocked and Claude is told exactly what's missing.</sub></td>
-    <td><sub><b>You choose, not the AI.</b> Beyond Claude's suggestions you can search all 1,938 Google and Fontshare fonts, each shown on your own words.</sub></td>
+    <td colspan="2"><sub><b>It can't skip steps.</b> In Claude Code, if Claude tries to edit your app before you've picked a direction, the edit is blocked and Claude is told exactly what's missing.</sub></td>
   </tr>
 </table>
 
@@ -116,7 +120,7 @@ npx skills add Aydin-codes/design-studio
 Type `/design-studio` and say what you want, or just ask for a design in your own words:
 
 ```text
-/design-studio a landing page for my bakery
+/design-studio a landing page for my AI startup
 /design-studio reskin this dashboard, keep how everything works
 /design-studio polish the pricing page
 /design-studio fix the hero, it looks AI-made
@@ -200,7 +204,7 @@ Fonts, icons, photos and other assets come from the [toolkit](https://github.com
 hooks/hooks.json         Claude Code hooks that run the checks
 agents/design-critic.md  fresh-eyes reviewer that sees only screenshots and the plan
 tests/                   tests for the check script (node --test)
-skills/toolkit/          copy of github.com/Aydin-codes/toolkit: stacks, libraries and asset sources, with licences
+skills/toolkit/          copy of github.com/Aydin-codes/toolkit: stacks, libraries and asset sources, with licenses
 skills/color-and-type-spark/  live picking sheets for colors and fonts
 skills/design-studio/
 ├── SKILL.md             the core: rules and the nine steps
@@ -239,4 +243,4 @@ Found a step it skipped, or a page that still looks AI-made? [Open an issue](htt
 
 MIT. See [LICENSE](LICENSE).
 
-<sub>Built on ideas and skills from Emil Kowalski (MIT), Paul Bakaus's Impeccable, Anthropic's <code>frontend-design</code>, Kole Jain's design videos, Mobbin's dashboard study and the raintree Apple HIG skills; expert skills are called, not copied. Icons from Microsoft <a href="https://github.com/microsoft/fluentui-emoji">Fluent Emoji</a> (MIT) and <a href="https://simpleicons.org">Simple Icons</a> (CC0). The bakery and "Flowly" are made-up examples.</sub>
+<sub>Built on ideas and skills from Emil Kowalski (MIT), Paul Bakaus's Impeccable, Anthropic's <code>frontend-design</code>, Kole Jain's design videos, Mobbin's dashboard study and the raintree Apple HIG skills; expert skills are called, not copied. Icons from Microsoft <a href="https://github.com/microsoft/fluentui-emoji">Fluent Emoji</a> (MIT) and <a href="https://simpleicons.org">Simple Icons</a> (CC0). Flowly, specindex, The Quiet Lyceum, Seedline, Shipday and Greenleaf Landscaping are made-up examples. Photos from Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Laptop_and_a_mug_(Unsplash).jpg">Laptop and a mug</a> (CC0) and <a href="https://commons.wikimedia.org/wiki/File:Messina_Orchard_garden_and_lawn.jpg">Messina Orchard garden and lawn</a> by Greghenderson2006 (CC BY-SA 4.0).</sub>
