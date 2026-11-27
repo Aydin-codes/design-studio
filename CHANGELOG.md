@@ -1,7 +1,9 @@
 # Changelog
 
-## Unreleased
-- The toolkit now has its own repo, github.com/Aydin-codes/toolkit. `skills/toolkit/` is a copy of its 0.1.0 draft, so one install still gets both.
+## v0.13.1
+- The toolkit now has its own repo, github.com/Aydin-codes/toolkit. `skills/toolkit/` is a copy of its 0.1.0 draft, so one install still gets both. Pages that aren't written yet are marked "coming soon" instead of linking to missing files.
+- README rebuilt: the nine steps at a glance, five kinds of AI slop it checks for, the checks shown working, and a how-it-works diagram.
+- "License" spelled the American way everywhere.
 
 ## v0.13
 - Fix a part: point at one section and it locks everything else, explains what's wrong in plain words, and shows three fixes for just that part.
@@ -25,7 +27,7 @@
 - Review board: switch between directions, mark Pick, Take parts or Reject, write notes, then copy or download your feedback. Works offline with any AI tool.
 
 ## v0.10
-- The plugin now includes two companion skills: `toolkit` (stacks, libraries and asset sources with licences) and `color-and-type-spark` (live picking sheets for colors and fonts). design-studio points to them instead of keeping its own copies.
+- The plugin now includes two companion skills: `toolkit` (stacks, libraries and asset sources with licenses) and `color-and-type-spark` (live picking sheets for colors and fonts). design-studio points to them instead of keeping its own copies.
 - Teaches the words: when you describe something in plain language, it tells you the design term and the source.
 - Copy rule: every line must pass "could this sentence describe any other product?"
 - Starts from human-made references, always: your own first, otherwise two or three real ones it finds and shows. Building is blocked until one is recorded.
