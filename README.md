@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/assets/logo.svg" alt="design-studio logo: a fan of paint swatch cards with the vermilion one picked" width="96"></p>
+
 <h1 align="center">design-studio</h1>
 
 <p align="center"><b>design-studio makes Claude ask first, show you real options, and build only what you pick.</b><br>
@@ -22,7 +24,10 @@
 <p align="center">If design-studio helps you, please give it a star ⭐</p>
 
 <p align="center">
-  <img src=".github/assets/hero.png" width="838" alt="design-studio in one picture. A blue command bar reads /design-studio followed by what you're making, and works in Claude Code, the Claude app, Cursor and Codex. Below it, nine coloured step cards with 3D icons: 1 Find project, 2 Setup, 3 Job and depth, 4 Confirm frozen, 5 Interview, 6 References, 7 Directions, 8 Plan, 9 Build and check, under the line: Nine steps, and it stops for you at every decision. Lines lead to a panel: What you get, three real directions, DESIGN.md, your taste profile, a build checked for AI tells, and large numbers: 9 steps, 6 jobs, 6 outputs, 3 depths.">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/hero-dark.png">
+    <img src=".github/assets/hero-light.png" width="838" alt="design-studio in one picture. A blue command bar reads /design-studio followed by what you're making, and works in Claude Code, the Claude app, Cursor and Codex. Below it, nine coloured step cards with 3D icons: 1 Find project, 2 Setup, 3 Job and depth, 4 Confirm frozen, 5 Interview, 6 References, 7 Directions, 8 Plan, 9 Build and check, under the line: Nine steps, and it stops for you at every decision. Lines lead to a panel: What you get, three real directions, DESIGN.md, your taste profile, a build checked for AI tells, and large numbers: 9 steps, 6 jobs, 6 outputs, 3 depths.">
+  </picture>
 </p>
 
 ## What it is
